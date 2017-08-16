@@ -1,0 +1,1161 @@
+{
+ "system": {
+    "name": "sms",
+    "type": "module",
+    "properties": {
+      "sms": {
+        "name": "sms()",
+        "type": "module",
+        "doc": " link "
+      },
+      "scp": {
+        "name": "scp",
+        "type": "module",
+        "doc": ""
+      },
+      "sdc": {
+        "name": "sdc()",
+        "type": "module",
+        "doc": ""
+      },
+      "sh": {
+        "name": "sh",
+        "type": "module",
+        "doc": ""
+      },
+      "http": {
+        "name": "http",
+        "type": "module",
+        "doc": ""
+      },
+      "strex": {
+        "name": "strex",
+        "type": "module",
+        "doc": ""
+      },
+      "phone": {
+        "name": "phone",
+        "type": "module",
+        "doc": ""
+      },
+      "sqlite": {
+        "name": "sqlite",
+        "type": "module",
+        "doc": ""
+      },
+      "oms": {
+        "name": "oms",
+        "type": "module",
+        "doc": ""
+      },
+      "redis": {
+        "name": "redis",
+        "type": "module",
+        "doc": ""
+      },
+      "bossxml": {
+        "name": "bossxml",
+        "type": "module",
+        "doc": ""
+      },
+      "aqsmit": {
+        "name": "aqsmit",
+        "type": "module",
+        "doc": ""
+      },
+      "base": {
+        "name": "base",
+        "type": "module",
+        "doc": ""
+      }
+    }
+  },
+  "strex": {
+    "name": "strex",
+    "type": "strex",
+    "inherits":[
+      ""
+    ],
+    "properties": {
+      "replace": {
+        "name": "replace(str, index, ch)",
+        "type": "function",
+        "returns": "string",
+        "args": {
+          "str": {
+            "name": "str",
+            "type": "string",
+            "doc": "拟替换更新的原字符串",
+            "option": "False",
+            "inherits":[
+               ""
+            ]
+          },
+          "index": {
+            "name": "index",
+            "type": "number",
+            "option":"False",
+            "doc": "替换更新位置，非零整数"
+          },
+          "ch": {
+            "name": "ch",
+            "type": "string",
+            "doc": "更新的字符"
+          }
+        },
+        "doc": "**函数功能**：用指定的字符串，替换待处理字符串中，出现的特定的子串。 \n\n**参数说明**:\n\n__str__（必选）: 拟替换更新的原字符串。\n\n__index__（必选）:替换更新位置，非零整数。\n\n__ch__（必选）:更新的字符。 \n\n**返回值**：替换后的字符串。 \n\n示例说明：[参考官网的示例](http://47.93.41.209:9876/strex/#61-strexreplacestr-index-ch).功能：\n\n将字符串str中index位置替换为字符ch\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|str       |无        |必选      |string    |拟替换更新的原字符串|\n|index     |无        |必选      |number    |替换更新位置，非零整数|\n|ch        |无        |必选      |string    |更新的字符          |\n\n\n\n参数异常：\n\n实际参数类型不匹配时记录错误日志，返回原始字符串str\n\n返回值：\nstring类型：替换更新后的字符串"
+      },
+      "trim": {
+        "name": "trim",
+        "type": "function",
+        "returns": "string",
+        "args": {
+          "str": {
+            "name": "str",
+            "type": "string",
+            "doc": "拟替换更新的原字符串",
+            "option": "False"
+          }
+        },
+        "doc": "功能：\n\n *  trim     去除str中的左右空白字符(包括，回车、换行、制表符)\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|str       |无        |必选      |string    |需要去空白字符的字符串|\n\n参数异常：\n实际参数类型不匹配时记录错误日志，返回原参数.\n\n返回值：   string类型：去除空白字符后的字符串.\n\n__示例代码__：[参考示例代码](http://47.93.41.209:9876/strex/#62-strextrimstr)"      
+      },
+      "trimLeft": {
+        "name": "trimLeft",
+        "type": "function",
+        "returns": "string",
+        "args": {
+          "str": {
+            "name": "str",
+            "type": "string",
+            "doc": "拟替换更新的原字符串",
+            "option": "False"
+          }
+        },
+        "doc": "功能：\n\n *  trimLeft     去除str中的左端空白字符(包括，回车、换行、制表符)\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|str       |无        |必选      |string    |需要去空白字符的字符串|\n\n参数异常：\n实际参数类型不匹配时记录错误日志，返回原参数.\n\n返回值：   string类型：去除空白字符后的字符串.\n\n__示例代码__：[参考示例代码](http://47.93.41.209:9876/strex/#62-strextrimstr)"
+      },
+      "trimRight": {
+        "name": "trimRight",
+        "type": "function",
+        "returns": "string",
+        "args": {
+          "str": {
+            "name": "str",
+            "type": "string",
+            "doc": "拟替换更新的原字符串",
+            "option": "False"
+          }
+        },
+        "doc": "功能：\n\n *  trimRight     去除str中的右端空白字符(包括，回车、换行、制表符)\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|str       |无        |必选      |string    |需要去空白字符的字符串|\n\n参数异常：\n实际参数类型不匹配时记录错误日志，返回原参数.\n\n返回值：   string类型：去除空白字符后的字符串.\n\n__示例代码__：[参考示例代码](http://47.93.41.209:9876/strex/#62-strextrimstr)"      
+      },
+      "delRow": {
+        "name": "delRow",
+        "type": "function",
+        "returns": "string",
+        "args": {
+          "str": {
+            "name": "str",
+            "type": "string",
+            "doc": "拟替换更新的原字符串",
+            "option": "False"
+          },
+          "row": {
+            "name": "row",
+            "type": "number",
+            "doc": "拟替换更新的原字符串",
+            "option": "False"
+          },
+          "...": {
+            "name": "...",
+            "type": "number",
+            "doc": "拟替换更新的原字符串",
+            "option": "True"
+          }
+        },
+        "exception": "实际参数类型不匹配时记录错误日志，返回原string。", 
+        "doc": "功能：\n\n   将字符串删除第row行，可以设置多个参数删除多行。\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|str      |无        |必选      |string    |需要进行删除操作的字符串                |\n|row      |无        |必选      |number    |要删除的行号(按照Lua标准以1开始,负数代表最后一行向前计数的行数)|\n\n参数异常：\n\n   实际参数类型不匹配时记录错误日志，返回原string。\n\n返回值：\n\n   删除指定行之后的 string。\n\n参考示例：[参考示例代码](http://47.93.41.209:9876/strex/#63-strexdelrowstr-row)" 
+      },
+      "addKey": {
+        "name": "addkey",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "srcTab": {
+            "name": "srcTab",
+            "type": "table",
+            "doc": "需要加key值的table(必须为一维二维数组形式)",
+            "option": "False"
+          },
+          "keyTab": {
+            "name": "keyTab",
+            "type": "table",
+            "doc": "Key值组成的 table ",
+            "option": "False"
+          }
+        },
+        "exception": "实际参数类型不匹配时记录错误日志，返回原table。当key的数量与value的数量不一致时，会记录日志，如果key>value，用多余的key值访问时会是nil，当key< value时，value的key值不会改变保持原有的数字key值。",
+        "doc": "功能：\n\n   为srcTab加上Key值，不用数字做键值。\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|srcTab    |无        |必选      |table     |需要加key值的table(必须为一维二维数组形式)                 |\n|keyTab    |无        |必选      |table     |Key值组成的table    |\n\n\n参数异常：\n\n   实际参数类型不匹配时记录错误日志，返回原table。\n\n当key的数量与value的数量不一致时，会记录日志，如果key>value，用多余的key值访问时会是nil，当key< value时，value的key值不会改变保持原有的数字key值。\n\n\n返回值：\n\n   返回加好key值的 table\n\n参考示例：[参考示例代码](http://47.93.41.209:9876/strex/#64-strexaddkeysrctab-keytab)"
+      },
+      "str2Tab": {
+        "name": "str2Tab",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "str": {
+            "name": "str",
+            "type": "string",
+            "doc": "待解析的字符串",
+            "option": "False"
+          },
+          "sepLine": {
+            "name": "sepLine",
+            "type": "string",
+            "doc": "一级（“行”）分隔符，正则表达式。若有此参数,str将被解析成二维数组;否则,解析成一维数组)",
+            "option": "True"
+          },
+          "sepField": {
+            "name": "sepField",
+            "type": "string",
+            "doc": "二级（“列”）分隔符正则表达式。默认为空白字符，即 “[\t\r\n]+”",
+            "option": "True"
+          },
+          "trim": {
+            "name": "trim",
+            "type": "bool",
+            "doc": "解析之后是否去除左右空白字符(默认为true，去除)",
+            "option": "True"
+          }
+        },
+        "exception": "实际参数类型不匹配时记录错误日志，返回原table。当key的数量与value的数量不一致时，会记录日志，如果key>value，用多余的key值访问时会是nil，当key< value时，value的key值不会改变保持原有的数字key值。",
+        "doc": "功能：\n\n   将字符串解析成table(一维数组或二维数组)。\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|str       |无        |必选      |string    |待解析的字符串      |\n|sepLine   |无        |可选      |string    |一级（“行”）分隔符，正则表达式。若有此参数,str将被解析成二维数组;否则,解析成一维数组)|\n|sepField  |无        |可选      |string    |二级（“列”）分隔符正则表达式。默认为空白字符，即'[\\t\\r\\n]+'|\n|trim      |无        |可选      |bool      |解析之后是否去除左右空白字符(默认为true，去除)|\n\n\n参数异常：\n\n   实际参数类型不匹配时记录错误日志，返回空table。\n\n返回值：\n\n   table类型：解析之后的table\n\n参考示例：[参考示例代码](http://47.93.41.209:9876/strex/#65-strexstr2tabstr-sepline-sepfield-trim)"
+      },
+      "str2TabH": {
+        "name": "str2TabH",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "str": {
+            "name": "str",
+            "type": "string",
+            "doc": "待解析的字符串",
+            "option": "False"
+          },
+          "sepLine": {
+            "name": "sepLine",
+            "type": "string",
+            "doc": "一级分隔符,正则式(默认为换行符”\n+”)",
+            "option": "True"
+          },
+          "sepField": {
+            "name": "sepField",
+            "type": "string",
+            "doc": "二级（“列”）分隔符正则表达式。默认为空白字符，即 “[\t\r\n]+”",
+            "option": "True"
+          },
+          "trim": {
+            "name": "trim",
+            "type": "bool",
+            "doc": "解析之后是否去除左右空白字符(默认为true，去除)",
+            "option": "True"
+          }
+        },
+        "notice": "当只有一个分隔符参数时, 默认其为 sepLine",
+        "exception": "实际参数类型不匹配时记录错误日志，返回空 table。",
+        "doc": "功能：\n\n   将字符串解析成table(二维数组)，以第一行作为键值。\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|result    |无        |必选      |string    |Shell命令返回的结果 |\n|sepLine   |无        |可选      |string    |一级分隔符正则式(默认为换行符”[\n]+”)  |\n|sepField  |无        |可选      |string    |二级分隔符正则式(默认为空白字符类字符”[\t\r\n]+”)|\n|trim      |无        |可选      |bool      |解析之后是否去除左右空白字符(默认为true，去除)|\n\n\n注:当只有一个分隔符参数时, 默认其为sepLine\n\n参数异常：\n\n   实际参数类型不匹配时记录错误日志，返回空table。\n\n返回值：\n\n   table类型：解析之后的table\n\n参考示例：[参考示例代码](http://47.93.1.209:9876/strex/#66-strexstr2tabhstr-sepline-sepfield-trim)"
+      },
+      "str2Map": {
+        "name": "str2Map",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "str": {
+            "name": "str",
+            "type": "string",
+            "doc": "待解析的字符串",
+            "option": "False"
+          },
+          "sepLine": {
+            "name": "sepLine",
+            "type": "string",
+            "doc": "一级分隔符,正则式(默认为换行符”\n+”)",
+            "option": "True"
+          },
+          "sepField": {
+            "name": "sepField",
+            "type": "string",
+            "doc": "二级（“列”）分隔符正则表达式。默认为空白字符，即 “[\t\r\n]+”",
+            "option": "True"
+          },
+          "trim": {
+            "name": "trim",
+            "type": "string",
+            "doc": "解析之后是否去除左右空白字符(默认为true，去除)",
+            "option": "True"
+          }
+        },
+        "notice": "当只有一个分隔符参数时, 默认其为 sepLine",
+        "exception": "实际参数类型不匹配时记录错误日志，返回空 table。",
+        "doc": "功能：\n\n   将键值对形式的字符串解析成table，默认每行只有一个键值对.\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|src       |无        |必选      |string    |源字符串            |\n|sepLine   |无        |可选      |string    |一级分隔符,正则式(默认为换行符”\n+”)    |\n|sepField  |无        |可选      |string    |二级分隔符正则式(默认为空白字符类字符”[\t\r\n]+”)|\n|trim      |无        |可选      |bool      |解析之后是否去除左右空白字符(默认为true，去除)|\n\n\n注:当只有一个分隔符参数时, 默认其为sepLine\n\n参数异常：\n\n   实际参数类型不匹配时记录错误日志，返回空table。\n\n返回值：\n\n   解析好的table\n\n参考示例：[参考示例代码](http://47.93.41.209:9876/strex/#67-strexstr2mapstr-sepline-sepfield-trim)\n\n"
+      },
+      "regexec": {
+        "name": "regexec",
+        "type": "function",
+        "returns": "string",
+        "args": {
+          "reg": {
+            "name": "reg",
+            "type": "string",
+            "doc": "正则表达式",
+            "option": "False"
+          },
+          "str": {
+            "name": "str",
+            "type": "string",
+            "doc": "要执行匹配的字符串",
+            "option": "True"
+          }
+        },
+        "notice": "不同平台对正则式支持程度不同（主要为”\\s“和”\\w“的支持）",
+        "exception": "实际参数类型不匹配时记录错误日志，返回原参数",
+        "doc": "注意：不同平台对正则式支持程度不同（主要为\\s\\w的支持）\n\n功能：\n\n   查找str中符合正则式reg的字符串，最多存储并返回八个匹配到的字符串\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|reg       |无        |必选      |string    |正则式              |\n|str       |无        |必选      |string    |需要匹配的字符串    |\n\n\n参数异常：\n\n   实际参数类型不匹配时记录错误日志，返回原参数。\n\n返回值：\n\n   依次返回匹配到的字符串\n\n参考示例：[参考示例代码](http://47.93.41.209:9876/strex/#68-strexregexecreg-str)"
+      }
+    },
+    "doc": "strex 模块，提供对字符串的基本操作处理功能。[API 参考手册](http://47.93.41.209:9876/strex/)"
+  },
+  "bossxml": {
+    "name": "bossxml",
+    "type": "bossxml",
+    "inherits":[
+      ""
+    ],
+    "properties": {
+      "trans": {
+        "name": "trans(serv, cmd, tab[, extra])",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "serv": {
+            "name": "serv",
+            "type": "string",
+            "doc": "业务标识，如VPMN，MCN等",
+            "option": "False"
+          },
+          "cmdm": {
+            "name": "cmd",
+            "type": "string",
+            "doc": "命令标识，如ADD MCN ACNT等",
+            "option": "True"
+          },
+          "tab": {
+            "name": "tab",
+            "type": "table",
+            "doc": "对应网状网请求消息的InterBOSS.SvcCont节 点，对于不同的请求交易，参数内容是不同的",
+            "option": "False"
+          },
+          "extra": {
+            "name": "extra",
+            "type": "table",
+            "doc": "业务大圈类交易的确认命令额外需要的SessionID参数",
+            "option": "True"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n bossxml.trans(serv, cmd, tab[, extra])\n--------------------------------------------------\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准 |备注            |\n|-------------------|---------|---------|-------------------------\n|支持          |不拦截，返回错截 |发送失败、超时    |设返回值为r     |\n\n\n功能：\n\n   通过网状网接口向BOSS提交业务管理指令\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|serv      |无        |必选      |string    |业务标识，如VPMN，MCN等                 |\n|cmd       |无        |必选      |string    |命令标识，如ADD MCN ACNT等              |\n|tab       |无        |必选      |table     |对应网状网请求消息的InterBOSS.SvcCont节 点，对于不同的请求交易，参数内容是不同的。|\n|extra     |无        |可选      |table     |业务大圈类交易的确认命令额外需要的SessionID参数，见下例。   |\n\n\n参数错误：\n\n   类型错误：记录日志，返回失败。\n\n   冗余参数：最多只处理4个参数，忽略掉多余的。\n\n返回值：\n\n   一个返回值，table类型，所含元素如下表：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|Retn      |          |必选      |string    |操作结果码（0000成功，其余失败）        |\n|Desc      |          |必选      |string    |操作结果描述        |\n|xxxRsp    |          |可选      |table     |BOSS受理请求且有返回结果，实际xxxRsp参数名因具体的指令而异  |\n\n参考示例：[参考示例代码](http://47.93.41.209:9876/bossxml/#111-bossxmltransserv-cmd-tab-extra)"
+      }
+    },
+    "doc": "bossxml 模块，通过网状网接口向BOSS提交业务管理指令。[API 参考手册](http://47.93.41.209:9876/bossxml/)"
+  },
+  "http": {
+    "name": "http",
+    "type": "http",
+    "inherits":[
+      ""
+    ],
+    "properties": {
+      "get": {
+        "name": "get(plat, url, body)",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "plat": {
+            "name": "plat",
+            "type": "string",
+            "doc": "HTTP服务平台标识，由业务与接口模块约定",
+            "option": "False"
+          },
+          "url": {
+            "name": "url",
+            "type": "string",
+            "doc": "HTTP请求URL，一般为 ：业务/命令/版本，比如“Corpinter/flow“",
+            "option": "False"
+          },
+          "body": {
+            "name": "tab",
+            "type": "table",
+            "doc": "HTTP请求必需的参数，具体参数与命令相关",
+            "option": "True"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：http.get(plat, url, body)\n----------------------------------------------\n\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准 |备注            |\n|---------|----------|---------|----------------------------------|\n|支持          |不拦截，出错返回 |r.Retn非\"0000\"    |设返回值为r     |\n\n\n\n功能：\n\n   发起HTTP GET操作请求。\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|plat      |          |必选      |string    |HTTP服务平台标识，由业务与接口模块约定  |\n|url       |          |必选      |string    |HTTP请求URL，一般为 ：业务/命令/版本，比如“Corpinter/flow”  |\n|body      |          |可选      |table     |HTTP请求必需的参数，具体参数与命令相关  |\n\n\n参数错误：\n\n   类型错误：返回失败；\n\n   冗余参数：最多取前3个参数，忽略其它冗余的；\n\n返回值：\n\n   table类型\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|Retn      |          |必选      |string    |操作结果码，即HTTP状态码|\n|Desc      |          |必选      |string    |操作结果描述，即HTTP状态描述信息|\n\n参考示例：[参考示例代码](http://47.93.41.209:9876/http/#51-httpgetplat-url-body)"
+      },
+      "post": {
+        "name": "post(plat, url[, header], body)",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "plat": {
+            "name": "plat",
+            "type": "string",
+            "doc": "HTTP服务平台标识，由业务与接口模块约定",
+            "option": "False"
+          },
+          "url": {
+            "name": "url",
+            "type": "string",
+            "doc": "HTTP请求URL，一般为 ：业务/命令/版本，比如“Corpinter/flow“",
+            "option": "False"
+          },
+          "header": {
+            "name": "header",
+            "type": "table",
+            "doc": "指定HTTP消息头参数",
+            "option": "True"
+          },
+          "body": {
+            "name": "body",
+            "type": "table",
+            "doc": "HTTP请求消息体",
+            "option": "True"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\npost(plat, url[, header], body)\n----------------------------------------------\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准 |备注            |\n|---------|----------|---------|----------------------------------|\n|支持     |不拦截，出错返回 |r.Retn非\"0000\"    |设返回值为r     |\n\n\n功能：\n\n* http.post()   发起HTTP POST操作请求；\n* http.put()       发起HTTP PUT操作请求；\n* http.update() 发起HTTP UPDATE操作请求；\n* http.delete() 发起HTTP DELETE操作请求；\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|plat      |          |必选      |string    |HTTP服务平台标识，由业务与接口模块约定  |\n|url       |          |必选      |string    |HTTP请求URL，与对端HTTP服务器约定，一般 为：业务/命令/版本，比如“Corpinter/flow”|\n|header    |          |可选      |table     |指定HTTP消息头参数  |\n|body      |          |可选      |table     |HTTP请求消息体      |\n\n\n参数错误：\n\n   类型错误：返回失败；\n\n   冗余参数：最多取前4个参数，忽略其它冗余的；\n\n返回值：\n\n   table类型\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|Retn      |          |必选      |string    |操作结果码，即HTTP状态码（200 成功）    |\n|Desc      |          |必选      |string    |操作结果描述，即HTTP状态描述信息        |\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/http/#52-httppostplat-url-header-body)"
+      },
+      "put": {
+        "name": "put(plat, url[, header], body)",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "plat": {
+            "name": "plat",
+            "type": "string",
+            "doc": "HTTP服务平台标识，由业务与接口模块约定",
+            "option": "False"
+          },
+          "url": {
+            "name": "url",
+            "type": "string",
+            "doc": "HTTP请求URL，一般为 ：业务/命令/版本，比如“Corpinter/flow“",
+            "option": "False"
+          },
+          "header": {
+            "name": "header",
+            "type": "table",
+            "doc": "指定HTTP消息头参数",
+            "option": "True"
+          },
+          "body": {
+            "name": "body",
+            "type": "table",
+            "doc": "HTTP请求消息体",
+            "option": "True"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\nput(plat, url[, header], body)\n----------------------------------------------\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准 |备注            |\n|---------|----------|---------|----------------------------------|\n|支持     |不拦截，出错返回 |r.Retn非\"0000\"    |设返回值为r     |\n\n\n功能：\n\n* http.post()   发起HTTP POST操作请求；\n* http.put()       发起HTTP PUT操作请求；\n* http.update() 发起HTTP UPDATE操作请求；\n* http.delete() 发起HTTP DELETE操作请求；\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|plat      |          |必选      |string    |HTTP服务平台标识，由业务与接口模块约定  |\n|url       |          |必选      |string    |HTTP请求URL，与对端HTTP服务器约定，一般 为：业务/命令/版本，比如“Corpinter/flow”|\n|header    |          |可选      |table     |指定HTTP消息头参数  |\n|body      |          |可选      |table     |HTTP请求消息体      |\n\n\n参数错误：\n\n   类型错误：返回失败；\n\n   冗余参数：最多取前4个参数，忽略其它冗余的；\n\n返回值：\n\n   table类型\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|Retn      |          |必选      |string    |操作结果码，即HTTP状态码（200 成功）    |\n|Desc      |          |必选      |string    |操作结果描述，即HTTP状态描述信息        |\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/http/#52-httppostplat-url-header-body)"
+      },
+      "update": {
+        "name": "update(plat, url[, header], body)",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "plat": {
+            "name": "plat",
+            "type": "string",
+            "doc": "HTTP服务平台标识，由业务与接口模块约定",
+            "option": "False"
+          },
+          "url": {
+            "name": "url",
+            "type": "string",
+            "doc": "HTTP请求URL，一般为 ：业务/命令/版本，比如“Corpinter/flow“",
+            "option": "False"
+          },
+          "header": {
+            "name": "header",
+            "type": "table",
+            "doc": "指定HTTP消息头参数",
+            "option": "True"
+          },
+          "body": {
+            "name": "body",
+            "type": "table",
+            "doc": "HTTP请求消息体",
+            "option": "True"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\nupdate(plat, url[, header], body)\n----------------------------------------------\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准 |备注            |\n|---------|----------|---------|----------------------------------|\n|支持     |不拦截，出错返回 |r.Retn非\"0000\"    |设返回值为r     |\n\n\n功能：\n\n* http.post()   发起HTTP POST操作请求；\n* http.put()       发起HTTP PUT操作请求；\n* http.update() 发起HTTP UPDATE操作请求；\n* http.delete() 发起HTTP DELETE操作请求；\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|plat      |          |必选      |string    |HTTP服务平台标识，由业务与接口模块约定  |\n|url       |          |必选      |string    |HTTP请求URL，与对端HTTP服务器约定，一般 为：业务/命令/版本，比如“Corpinter/flow”|\n|header    |          |可选      |table     |指定HTTP消息头参数  |\n|body      |          |可选      |table     |HTTP请求消息体      |\n\n\n参数错误：\n\n   类型错误：返回失败；\n\n   冗余参数：最多取前4个参数，忽略其它冗余的；\n\n返回值：\n\n   table类型\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|Retn      |          |必选      |string    |操作结果码，即HTTP状态码（200 成功）    |\n|Desc      |          |必选      |string    |操作结果描述，即HTTP状态描述信息        |\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/http/#52-httppostplat-url-header-body)"
+      },
+      "delete": {
+        "name": "delete(plat, url[, header], body)",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "plat": {
+            "name": "plat",
+            "type": "string",
+            "doc": "HTTP服务平台标识，由业务与接口模块约定",
+            "option": "False"
+          },
+          "url": {
+            "name": "url",
+            "type": "string",
+            "doc": "HTTP请求URL，一般为 ：业务/命令/版本，比如“Corpinter/flow“",
+            "option": "False"
+          },
+          "header": {
+            "name": "header",
+            "type": "table",
+            "doc": "指定HTTP消息头参数",
+            "option": "True"
+          },
+          "body": {
+            "name": "body",
+            "type": "table",
+            "doc": "HTTP请求消息体",
+            "option": "True"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\ndelete(plat, url[, header], body)\n----------------------------------------------\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准 |备注            |\n|---------|----------|---------|----------------------------------|\n|支持     |不拦截，出错返回 |r.Retn非\"0000\"    |设返回值为r     |\n\n\n功能：\n\n* http.post()   发起HTTP POST操作请求；\n* http.put()       发起HTTP PUT操作请求；\n* http.update() 发起HTTP UPDATE操作请求；\n* http.delete() 发起HTTP DELETE操作请求；\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|plat      |          |必选      |string    |HTTP服务平台标识，由业务与接口模块约定  |\n|url       |          |必选      |string    |HTTP请求URL，与对端HTTP服务器约定，一般 为：业务/命令/版本，比如“Corpinter/flow”|\n|header    |          |可选      |table     |指定HTTP消息头参数  |\n|body      |          |可选      |table     |HTTP请求消息体      |\n\n\n参数错误：\n\n   类型错误：返回失败；\n\n   冗余参数：最多取前4个参数，忽略其它冗余的；\n\n返回值：\n\n   table类型\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|Retn      |          |必选      |string    |操作结果码，即HTTP状态码（200 成功）    |\n|Desc      |          |必选      |string    |操作结果描述，即HTTP状态描述信息        |\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/http/#52-httppostplat-url-header-body)"
+      }
+    },
+    "doc": "http 模块，通过网状网接口向BOSS提交业务管理指令。[API 参考手册](http://47.93.41.209:9876/http/)"
+  },
+  "sms": {
+    "name": "sms",
+    "type": "sms",
+    "properties": {
+      "submit": {
+        "name": "submit(key, src, dest, format[, ...])",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "key": {
+            "name": "key",
+            "type": "string | table",
+            "doc": "string类型，短信服务属性，不同的key对应着一组短信协议属性设置。通常可以使用业务标识、业务专用服务号码等。table类型，各种属性 值；",
+            "option": "False"
+          },
+          "src": {
+            "name": "src",
+            "type": "string",
+            "doc": "发送短信的号码（主叫）",
+            "option": "True"
+          },
+          "dest": {
+            "name": "dest",
+            "type": "string",
+            "doc": "接收短信的号码（被叫）",
+            "option": "False"
+          },
+          "format": {
+            "name": "format",
+            "type": "string",
+            "doc": "短信内容，可含GB汉字。支持C printf()格式串",
+            "option": "True"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n submit(key, src, dest, format[, ...])\n----------------------------------------------------\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准 |备注            |\n|---------|----------|------------------|-------------------------|\n|支持      |不拦截，返回错误 |发送失败、超时    |设返回值为r     |\n\n\n功能：\n\n   提交短信\n\n入口参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|key       |无        |必选      |string或table|string类型，短信服务属性，不同的key对应着一组短信协议属性设置。通常可以使用业务标识、业务专用服务号码等。table类型，各种属性 值；|\n|src       |无        |必选      |string    |发送短信的号码（主叫）|\n|dest      |无        |必选      |string    |接收短信的号码（被叫）|\n|format    |无        |必选      |string    |短信内容，可含GB汉字。支持C printf()格式串      |\n\n\n参数错误：\n\n   类型错误：记录日志，失败返回\n\n   冗余参数：接受处理至少4个参数，参数个数若与format格式串不匹配，失败返回\n\n返回值：\n\n一个，table类型，所含元素如下表：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|Retn      |          |必选      |string    |操作结果码(0000成功，其余失败)|\n|Desc      |          |必选      |string    |操作结果描述        |\n|msgid     |          |可选      |string    |信息标识            |\n|result    |          |可选      |string    |结果                |\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/sms/#81-smssubmitkey-src-dest-format)"
+      }
+    },
+    "doc": "sms 模块，提供 SMS 短信服务。[API 参考手册](http://47.93.41.209:9876/sms/)"
+  },
+  "sqlite": {
+    "name": "sqlite",
+    "type": "sqlite",
+    "properties": {
+      "sqlSelect": {
+        "name": "sqlSelect([dbname,] format[, ...])",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "dbname": {
+            "name": "dbname",
+            "type": "string",
+            "doc": "可以设置要查询的数据库对应的业务ID，缺省值为Lua业务逻辑脚本全局变量SQLITEDB。dbname必须小于等于32个字符且中间无空白字符",
+            "option": "True"
+          },
+          "format": { 
+            "name": "format",
+            "type": "string",
+            "doc": "按照 C printf() 风格直接提供SQL语句",
+            "option": "Flase"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n sqlite.sqlSelect([dbname,] format[, ...])\n-------------------------------------------------\n\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准 |备注            |\n|---------|----------|------------------|-------------------------|\n|支持     |拦截，出错不返回    |r.Retn非”0000”    |设返回值为r     |\n\n\n功能：\n\n   执行sqlite查询操作，只需给出查询SQL语句即可。\n\n   对于查询的目标数据库，若dbname存在，则由dbname指定，若不存在使用业务逻辑中的SQLITEDB指定。\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|   dbname |无        |可选      |string    |可以设置要查询的数据库对应的业务ID，缺省值为Lua业务逻辑脚本全局变量SQLITEDB。dbname必须小于等于32个字符且中间无空白字符|\n|format    |无        |必选      |string    |按照C printf()风格直接提供SQL语句|\n\n\n参数错误：\n\n   类型错误：记录日志，直接返回\n\n   冗余参数：与格式串要求的参数个数不匹配，直接返回\n\n返回值：\n\n   一个返回值：\n\n   table类型，包含元素如下表\n\n|参数名称 |约束     |类型     |描述                               |\n|---------|----------|---------------|-------------------------|\n|Retn     |必选     |string   |命令处理结果应答码，4位数字字符串 0000：操作成功；|\n|Desc     |必选     |string   |命令处理结果描述                   |\n|RowNum   |可选     |number   |查询结果行数                       |\n|Result   |可选     |table    |查询结果（行列矩阵），访问方法见示例|\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/sqlite/#91-sqlitesqlselectdbname-format)" 
+      },
+      "sqlRun": {
+        "name": "sqlRun([dbname,] format[, ...])",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "dbname": {
+            "name": "dbname",
+            "type": "string",
+            "doc": "可以设置要查询的数据库对应的业务ID，缺省值为Lua业务逻辑脚本全局变量SQLITEDB。dbname必须小于等于32个字符且中间无空白字符",
+            "option": "True"
+          },
+          "format": { 
+            "name": "format",
+            "type": "string",
+            "doc": "按照 C printf() 风格直接提供SQL语句",
+            "option": "Flase"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "sqlite.sqlRun([dbname,] format[, ...])\n--------------------------------------------\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准 |备注            |\n|---------|----------|---------|----------------------------------|\n|支持      |拦截，出错不返回 |r.Retn非”0000”    |设返回值为r     |\n\n\n功能：\n\n   执行sqlite更新操作，只需给出更新SQL语句即可。\n\n   对于更新的目标数据库，若dbname存在，则由dbname指定，若不存在使用业务逻辑中\n的SQLITEDB指定。\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|   dbname |无        |可选      |string    |可以设置要更新的数据库对应的业务ID，缺省值为Lua业务逻辑脚本全局变量SQLITEDB。dbname必须小于等于32个字符且中间无空白字符|\n|format    |无        |必选      |string    |按照C printf()风格直接提供SQL语句             |\n\n\n参数错误：\n\n   类型错误：记录日志，直接返回\n\n   冗余参数：与格式串要求的参数个数不匹配，直接返回\n\n返回值：\n\n   成功（一个返回值）：\n\n   table类型，包含元素如下表\n\n|参数名称 |约束     |类型     |描述                               |\n|---------|----------|---------|----------------------------------|\n|Retn     |必选     |string   |命令处理结果应答码，4位数字字符串当创建的表已经存在在数据库中，Retn 值也为00000000：操作成功；|\n|Desc     |必选     |string   |命令处理结果描述当创建的表已经存在在数据库中，Desc值也为table existed，其余为OK  |\n|RowNum   |必选     |string   |该更新命令影响的记录数             |\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/sqlite/#92-sqlitesqlrundbname-format)"}
+    },
+    "doc": "sqlite 模块，提供 SQLite 数据库操作接口。[API 参考手册](http://47.93.41.209:9876/sqlite/)"
+  },
+  "aqsmit": {
+    "name": "aqsmit",
+    "type": "aqsmit",
+    "properties": {
+      "submit": {
+        "name": "submit(serv, cmd, body)",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "serv": {
+            "name": "serv",
+            "type": "string",
+            "doc": "业务名例，固定填写 SMIT ",
+            "option": "False"
+          },
+          "cmdm": {
+            "name": "cmd",
+            "type": "string",
+            "doc": "命令名，目前支持三个：<br/> ADDTRIGGER添加黑名单<br/>DELTRIGGER解除黑名单<br/>STATEQUERY实时状态查询",
+            "option": "False"
+          },
+          "body": {
+            "name": "body",
+            "type": "table",
+            "doc": "命令参数内容",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n aqsmit.submit(serv, cmd, body)\n--------------------------------------\n\n|是否支持错误拦截|缺省拦截模式准   |API执行错误判定标 |备注            |\n|---------|----------|------------------|-------------------------\n|支持     |不拦截，返回错误 |发送失败、超时 |设返回值为r              |\n\n\n功能：\n\n   通过监控系统socket接口向服务端进行加解黑操作\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------|\n|serv      |无        |必选      |string    |业务名例，固定填写\"SMIT\"                |\n|cmd       |无        |必选      |string    |命令名，目前支持三个：<br/> ADDTRIGGER添加黑名单<br/>DELTRIGGER解除黑名单<br/>STATEQUERY实时状态查询 |\n|body      |无        |必选      |table     |命令参数内容        |\n\n\n参数错误：\n\n   类型错误：记录日志，返回失败。\n\n   冗余参数：最多只处理3个参数，忽略掉多余的。\n\n返回值：\n\n   一个返回值，table类型，所含元素如下表：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------|\n|Retn      |          |必选      |string    |操作结果码（0000成功，其余失败）|\n|Desc      |          |必选      |string    |操作结果描述        |\n|xxx       |          |可选      |table     |应答消息体，与具体的命令相关|\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/aqsmit/#121-aqsmitsubmitserv-cmd-body) "
+      }
+    },
+    "doc": "aqsmit 模块，提供加解黑名单服务。[API 参考手册](http://47.93.41.209:9876/aqsmit/)"
+  },
+  "phone": {
+    "name": "phone",
+    "type": "phone",
+    "properties": {
+      "isMobile": {
+        "name": "isMobile(phonenum)",
+        "type": "function",
+        "returns": "boolean",
+        "args": {
+          "phonenum": {
+            "name": "phonenum",
+            "type": "string",
+            "doc": "待检查号码",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "实际参数类型、个数不匹配时记录错误日志，返回false。",
+        "doc": "函数说明：\n\n  phone.isMobile(phonenum)\n-------------------------------\n\n功能：\n\n   检查phonenum是否为手机号\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|phonenum  |无        |必选      |string    |待检查号码          |\n\n\n参数异常：\n\n   实际参数类型、个数不匹配时记录错误日志，返回false。\n\n返回值：\n\n   boolean型，确认是手机号时返回true，否则返回false\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/phone/#71-phoneismobilephonenum) "
+      },
+      "isFixed": {
+        "name": "isFixed(phonenum)",
+        "type": "function",
+        "returns": "boolean",
+        "args": {
+          "phonenum": {
+            "name": "phonenum",
+            "type": "string",
+            "doc": "待检查号码",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "实际参数类型、个数不匹配时记录错误日志，返回false。",
+        "doc": "函数说明：\n\n  phone.isFixed(phonenum)\n----------------------------------\n\n功能：\n\n   检查phonenum是否为固定电话号\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|phonenum  |无        |必选      |string    |待检查号码          |\n\n\n参数异常：\n\n   实际参数类型、个数不匹配时记录错误日志，返回false。\n\n返回值：\n\n   boolean型，确认是固话号时返回true，否则返回false\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/phone/#72-phoneisfixedphonenum) "
+      },
+      "getLocationId": {
+        "name": "getLocationId(phonenum)",
+        "type": "function",
+        "returns": "boolean",
+        "args": {
+          "phonenum": {
+            "name": "phonenum",
+            "type": "string",
+            "doc": "用户号码",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "实际参数类型、个数不匹配时记录错误日志，返回false。",
+        "doc": "函数说明：\n\n  phone.getLocationId(phonenum)\n------------------------------------\n\n功能：\n\n   根据phonenum获取用户归属区号\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|phonenum  |无        |必选      |string    |用户号码            |\n\n\n参数异常：\n\n   实际参数类型、个数不匹配时记录错误日志，返回false。\n\n返回值：\n\n   成功：\n\n       string类型：用户归属区号\n\n   失败：\n\n       nil\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/phone/#73-phonegetlocationidphonenum) "
+      },
+      "getProvinceId": {
+        "name": "getProvinceId(phonenum)",
+        "type": "function",
+        "returns": "boolean",
+        "args": {
+          "phonenum": {
+            "name": "phonenum",
+            "type": "string",
+            "doc": "用户归属区号",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "实际参数类型、个数不匹配时记录错误日志，返回false。",
+        "doc": "函数说明：\n\n  phone.getProvinceId(locationid)\n------------------------------------\n\n功能：\n\n   根据locationid获取用户归属区号\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|locationid|无        |必选      |string    |用户归属区号        |\n\n\n参数异常：\n\n   实际参数类型、个数不匹配时记录错误日志，返回false。\n\n返回值：\n\n   成功：string类型：用户归属省号\n\n   失败：nil\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/phone/#74-phonegetprovinceidlocationid) "
+      }
+    },
+    "doc": "phone 模块，提供号码管理服务。[API 参考手册](http://47.93.41.209:9876/phone/)"
+  },
+  "oms": {
+    "name": "oms",
+    "type": "oms",
+    "properties": {
+      "report": {
+        "name": "report(serv，cmd，body)",
+        "type": "function",
+        "returns": "boolean",
+        "args": {
+          "serv": {
+            "name": "serv",
+            "type": "string",
+            "doc": "业务名例如，cpu，memory，对应cc端Lua文件名(不带lua后缀全大写)等等 ",
+            "option": "False"
+          },
+          "cmd": {
+            "name": "cmd",
+            "type": "string",
+            "doc": "命令名，对应cc端 Lua 文件中的函数标识",
+            "option": "False"
+          },
+          "body": {
+            "name": "body",
+            "type": "string | table",
+            "doc": "数据内容，string类型的话必须是JSON。（Timestamp固定有，如果是定时命令，则根据传入参数Time确定）",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n  oms.report(serv，cmd，body)\n------------------------------------\n\n功能：\n\n   AN向CC上报数据\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|serv      |无        |必选      |string    |业务名例如，cpu，memory，对应cc端Lua文件名(不带lua后缀全大写)等等 |\n|cmd       |无        |必选      |string    |命令名，对应cc端 Lua 文件中的函数标识    |\n|body      |无        |必选      |table/string|数据内容，string类型的话必须是JSON。（Timestamp固定有，如果是定时命令，则根据传入参数Time确定）|\n\n\n返回值：\n\n|参数名称 |约束     |类型     |描述                               |\n|---------|---------------|---------|---------------------------|\n|Retn     |必选     |string   |命令处理结果应答码，4位数字字符串 <br/>0000：成功；<br/>其他：失败（只负责发送过程，不关心AnGate接收之后的处理情况）          |\n|Desc     |必选     |string   |命令处理结果描述  \n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/oms/#131-omsreportservcmdbody) "
+      },
+      "save": {
+        "name": "save(serv，cmd，body)",
+        "type": "function",
+        "returns": "boolean",
+        "args": {
+          "serv": {
+            "name": "serv",
+            "type": "string",
+            "doc": "业务名例如，cpu，memory，对应cc端Lua文件名(不带lua后缀全大写)等等 ",
+            "option": "False"
+          },
+          "cmd": {
+            "name": "cmd",
+            "type": "string",
+            "doc": "命令名，对应cc端 Lua 文件中的函数标识",
+            "option": "False"
+          },
+          "body": {
+            "name": "body",
+            "type": "string | table",
+            "doc": "数据内容，string类型的话必须是JSON。（Timestamp固定有，如果是定时命令，则根据传入参数Time确定）",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n  oms.save(serv，cmd，body)\n------------------------------------\n\n功能：\n\n   备份AN向CC上报的数据\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|------------------------|\n|serv      |无        |必选      |string    |业务名例如，cpu，memory，对应cc端Lua文件名(不带lua后缀全大写等等 |\n|cmd       |无        |必选      |string    |命令名，对应cc端Lua 文件中的函数标识    |\n|body      |无        |必选      |table     |数据内容，table格式。（Timestamp固定有，如果是定时命令，则根据传入参数Time确定）|\n\n\n返回值：\n\n|参数名称 |约束     |类型     |描述                               |\n|---------|----------|---------|---------------------------------|\n|Retn     |必选     |string   |命令处理结果应答码，4位数字字符串 0000：成功；其他：失败（只负责发送过程，不关心angate接收之后的处理情况）          |\n|Desc     |必选     |string   |命令处理结果描述                   |\n\n 参考示例：[参考示例代码]http://47.93.41.209:9876/oms/#132-omssaveservcmdbody) "
+      }      
+    },
+    "doc": "oms 模块，提供OMS接口库服务。\ninclude \"oms\"\n\ninclude \"sqlite\" --需要操作sqlite数据库\n\n [API 参考手册](http://47.93.41.209:9876/oms/)"
+  },
+  "redis": {
+    "name": "redis",
+    "type": "redis",
+    "properties": {
+      "rpush": {
+        "name": "rpush(key, value, ...)",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "key": {
+            "name": "key",
+            "type": "string",
+            "doc": "要加入的队列名",
+            "option": "False"
+          },
+          "value": {
+            "name": "value",
+            "type": "string",
+            "doc": "要加入的值，支持格式串",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "实际参数类型、个数不匹配时记录错误日志。",
+        "doc": "函数说明：\n\n  redis.rpush(key, value, ...)\n------------------------------------\n\n功能:\n\n   在队列尾部追加元素\n\n参数:\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|key       |无        |必选      |string    |要加入的队列名      |\n|value     |无        |必选      |string    |要加入的值，支持格式串|\n\n\n参数异常：\n\n   实际参数类型、个数不匹配时记录错误日志。\n\n返回值：\n\n|参数名称 |约束     |类型     |描述                               |\n|---------|----------|---------|----------------------------------|\n|Retn     |必选     |string   |命令处理结果应答码，4位数字字符串 <br/> 0000：操作成功；                   |\n|Desc     |必选     |string   |命令处理结果描述                   |\n|RowNum   |可选     |number   |操作成功之后队列中元素个数         |\n|Result   |可选     |number   |返回结果，值同RowNum               | \n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/redis/#101-redisrpushkey-value) "
+      },
+      "lpop": {
+        "name": "lpop(key)",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "key": {
+            "name": "key",
+            "type": "string",
+            "doc": "要弹出元素的队列名",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "实际参数类型、个数不匹配时记录错误日志。",
+        "doc": "函数说明：\n\n  redis.lpop(key)\n------------------------------------\n\n功能:\n\n   弹出队首元素\n\n参数:\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|key       |无        |必选      |string    |要弹出元素的队列名  |\n\n\n参数异常：\n\n   实际参数类型、个数不匹配时记录错误日志。\n\n返回值：\n\n|参数名称 |约束     |类型     |描述                               |\n|---------|----------|---------|----------------------------------|\n|Retn     |必选     |string   |命令处理结果应答码，4位数字字符串 <br/> 0000：操作成功；|\n|Desc     |必选     |string   |命令处理结果描述                   |\n|Result   |可选     |string   |返回结果                           | \n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/redis/#102-redislpopkey) "
+      },
+      "rhset": {
+        "name": "rhset(key, field, value, ...)",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "key": {
+            "name": "key",
+            "type": "string",
+            "doc": "要加入的hashMap名",
+            "option": "False"
+          },
+          "field": {
+            "name": "field",
+            "type": "string",
+            "doc": "键值对中的键名",
+            "option": "False"
+          },
+          "value": {
+            "name": "value",
+            "type": "string",
+            "doc": "键值对中的值，支持格式串",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "实际参数类型、个数不匹配时记录错误日志。",
+        "doc": "函数说明：\n\n  redis.hset(key, field, value, ...)\n------------------------------------\n\n功能:\n\n   设置hashMap中的元素\n\n参数:\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|key       |无        |必选      |string    |要加入的hashMap名   |\n|field     |无        |必选      |string    |键值对中的键名      |\n|value     |无        |必选      |string    |键值对中的值，支持格式串|\n\n\n参数异常：\n\n   实际参数类型、个数不匹配时记录错误日志。\n\n返回值：成功：\n\n\n|参数名称 |约束     |类型     |描述                               |\n|---------|----------|-----------------|-------------------------|\n|Retn     |必选     |string   |命令处理结果应答码，4位数字字符串 <br/> 0000：操作成功；|\n|Desc     |必选     |string   |命令处理结果描述                   |\n|Result   |可选     |number   |0：field原来已经存在 <br/> 1：field是新值 |\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/redis/#103-redishsetkey-field-value) "
+      },
+      "hget": {
+        "name": "hget(key, field)",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "key": {
+            "name": "key",
+            "type": "string",
+            "doc": "要查找的hashMap名",
+            "option": "False"
+          },
+          "field": {
+            "name": "field",
+            "type": "string",
+            "doc": "键值对中的键名",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "实际参数类型、个数不匹配时记录错误日志。",
+        "doc": "函数说明：\n\n  redis.hget(key, field)\n------------------------------------\n\n功能:\n\n   查找hashMap中的元素\n\n参数:\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|key       |无        |必选      |string    |要查找的hashMap名   |\n|field     |无        |必选      |string    |键值对中的键名      |\n\n\n参数异常：\n\n   实际参数类型、个数不匹配时记录错误日志。\n\n返回值：\n\n|参数名称 |约束     |类型     |描述                               |\n|--------|---------|---------|-----------------------------------|\n|Retn     |必选     |string   |命令处理结果应答码，4位数字字符串; 0000：操作成功；|\n|Desc     |必选     |string   |命令处理结果描述|\n|Result   |可选     |nil或string|nil:field不存在string:field对应的value| \n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/redis/#104-redishgetkey-field) "
+      },
+      "exec": {
+        "name": "exec(rediscmd[, ...])",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "rediscmd": {
+            "name": "rediscmd",
+            "type": "string",
+            "doc": "redis命令，模式串格式<br/>【注意：暂不支持参数中包含空格等空白字符",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "实际参数类型、个数不匹配时记录错误日志。",
+        "doc": "函数说明：\n\n  redis.exec(rediscmd[, ...])\n------------------------------------\n\n功能:\n\n   通用API，执行redis命令\n\n参数:\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------|\n|rediscmd  |无        |必选      |string    |redis命令，模式串格式<br/>【注意：暂不支持参数中包含空格等空白字符|\n\n\n参数异常：\n\n   实际参数类型、个数不匹配时记录错误日志。\n\n返回值：\n\n   成功：\n\n|参数名称 |约束     |类型     |描述                               |\n|--------|--------|---------|-----------------------------------\n|Retn     |必选     |string   |命令处理结果应答码，4位数字字符串 0000：操作成功；|\n|Desc     |必选     |string   |命令处理结果描述|\n|RowNum   |可选     |number   |结果数量，命令返回结果为“批量”类型 时有效；|\n|Result   |可选     |string、number或table | 无 | \n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/redis/#105-redisexecrediscmd) "
+      }
+    },
+    "doc": "redis 模块，提供 Redis 库操作服务。要使用此部分API，需在Lua业务逻辑中包含如下代码行：\n\ninclude \"redis\"\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准 |备注            |\n|---------|----------|---------|---------------------------------|\n|支持          |不拦截，出错返回 |r.Retn非”0000”    |设返回值为r     | \n\n [API 参考手册](http://47.93.41.209:9876/redis/)"
+  },
+  "scp": {
+    "name": "scp",
+    "type": "scp",
+    "properties": {
+      "comm": {
+        "name": "comm(sid, msg)",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "sid": {
+            "name": "sid",
+            "type": "number",
+            "doc": "业务ID",
+            "option": "False"
+          },
+          "msg": {
+            "name": "msg",
+            "type": "string",
+            "doc": "组装好的COMM_INVOKE命令串",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n  scp.comm(sid, msg)\n----------------------------------\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准                |备注         |\n|-------------|--------------|---------------------------------|--------------\n|支持          |不拦截，返回错误 |#r为0，即r为空；或为\"ERROR:smpsync\"|设返回值为r |\n\n\n功能：\n\n   通过COMM_INVOKE接口调用SCP业务逻辑。\n\n参数：\n\n【注：使用新的scp.comm(sid, msg)，废弃scp.comm({SID=n,COMM=\"s\"})，但SLR兼容支持这两种形式的API，使用旧API的老代码不用修改，但新写代码应使用新的API】\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|sid       |          |必选      |number    |业务ID                |\n|msg       |          |必选      |string    |组装好的COMM_INVOKE命令串 |\n\n\n参数错误：\n\n   类型错误：记录日志，返回失败\n\n   冗余参数：记录日志，返回失败\n\n返回值：\n\n   一个，table类型，包含元素如下表：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|Retn     |          |必选      |string   |操作结果码(0000成功，其余失败)|\n|Desc     |          |必选      |string   |操作结果描述        |\n|Scpcode  |          |可选      |number   |scp号              |\n|....     |          |可选      |数组     |和具体命令有关(正常返回值按空格切分第一个值做Retn值，后面的形成数组，第一个值下标为1)|\n\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/scp/#21-scpcommsid-msg) "
+      },
+      "commAll": {
+        "name": "commAll(sid, msg)",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "sid": {
+            "name": "sid",
+            "type": "number",
+            "doc": "业务ID",
+            "option": "False"
+          },
+          "msg": {
+            "name": "msg",
+            "type": "string",
+            "doc": "组装好的COMM_INVOKE命令串",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n  scp.commAll(sid, msg)\n---------------------------\n\n功能：\n\n   通过COMM_INVOKE接口调用SCP业务逻辑(群发，sid对应的所有scp都发送)\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|sid      |          |必选      |number   |业务ID              |\n|msg      |          |必选      |string   |组装好的COMM_INVOKE命令串|\n\n\n参数错误：\n\n   类型错误：记录日志，返回失败\n\n   冗余参数：记录日志，返回失败\n\n返回值：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|Retn      |          |必选      |string    |操作结果码(0000成功，其余失败)|\n|Desc      |          |必选      |string    |操作结果描述        |\n|....      |          |可选      |数组      |每一个scp的返回值组成的数组。|\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/scp/#22-scpcommallsid-msg) "
+      },
+      "rjson": {
+        "name": "rjson(serv, cmd, body)",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "serv": {
+            "name": "serv",
+            "type": "string",
+            "doc": "业务名称",
+            "option": "False"
+          },
+          "cmd": {
+            "name": "cmd",
+            "type": "string",
+            "doc": "命令名称 ",
+            "option": "False"
+          },
+          "body": {
+            "name": "body",
+            "type": "table",
+            "doc": "命令体",
+            "option": "True"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n  scp.json(serv, cmd, body)\n----------------------------------\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准 |备注          |\n|--------------|--------------|--------------------------------|\n|支持          |不拦截，返回错误 |发送失败、超时    |设返回值为r    |\n\n\n功能：\n\n   通过JSON消息接口调用SCP业务逻辑。\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述             |\n|---------|----------|---------|---------|----------------------\n|serv     |          |必选      |string   |业务名称            |\n|cmd      |          |必选      |string   |命令名称            |\n|body     |          |可选      |table    |命令体              |\n\n\n参数错误：\n\n   类型错误：记录日志，返回失败\n\n   冗余参数：记录日志，返回失败\n\n返回值：\n\n   一个返回值）：table类型，所含元素如下表：\n\n|参数名称 |约束     |类型     |描述                              |\n|---------|---------|--------|--------------------------------|\n|Retn     |必选     |string   |命令处理结果应答码，0000为成功     |\n|Desc     |必选     |string   |命令处理结果描述                  |\n|Body     |可选     |table    |所含元素跟具体命令相关            |\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/scp/#23-scpjsonserv-cmd-body) "
+      }
+    },
+    "doc": "scp 模块，提供 SCP 等后台服务。要使用此部分API，需在Lua业务逻辑中包含如下代码行：\n\ninclude \"scp\" \n\n [API 参考手册](http://47.93.41.209:9876/scp/)"
+  },
+  "sh": {
+    "name": "sh",
+    "type": "sh",
+    "properties": {
+      "login": {
+        "name": "login([[host, user][, cache]])",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "host": {
+            "name": "host",
+            "type": "string",
+            "doc": "执行shell命令的目标主机信息，此信息需单独配置管理。缺省（或host=\"local\"）时，同SLR进程运行的主机，比如OMSAN主机。",
+            "option": "True"
+          },
+          "user": {
+            "name": "user",
+            "type": "string",
+            "doc": "登陆shell的账户信息。缺省为SLR进程运行有效账户，比如omsan账户。",
+            "option": "True"
+          },
+          "cache": {
+            "name": "cache",
+            "type": "boolean",
+            "doc": "显式sh.logout()或Lua业务指令执行完毕时，缓存shell以备下次login复用，还是关闭shell。缺省cache=false，关闭shell。",
+            "option": "True"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n  sh.login([[host, user][, cache]])\n--------------------------------------------\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准 |备注            |\n|---------|----------|---------|---------|-----------------------|\n|支持      |拦截，出错不返回 |r.Retn非“0000”    |设返回值为r         |\n\n\n说明：\n\n   该API调用错误时，直接退出逻辑执行。\n\n   此API有4种调用形式，详见例子说明。\n\n功能：\n\n   申请指定主机账户的shell执行环境；\n\n   不再需要执行shell命令时，建议显式调用sh.logout()释放shell执行环境资源。\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|host||可选|string|执行shell命令的目标主机信息，此信息需单独配置管理。缺省（或host=\"local\"）时，同SLR进程运行的主机，比如OMSAN主机。|\n|user      |          |可选      |string    |登陆shell的账户信息。缺省为SLR进程运行有效账户，比如omsan账户。|\n|cache||可选|boolean|显式sh.logout()或Lua业务指令执行完毕时，缓存shell以备下次login复用，还是关闭shell。缺省cache=false，关闭shell。|\n\n\n参数错误：\n\n   类型错误：自动使用缺省值替换之；\n\n   冗余参数：最多取前3个参数，忽略其它冗余的；\n\n返回值：\n\n   一个table\n\n|参数名称 |约束     |类型     |描述                               |\n|---------|----------|---------|----------------------------------|\n|Retn     |必选     |string   |命令执行结果码：0000 成功          |\n|Desc     |必选     |string   |命令执行结果描述                   |\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/sh/#41-shloginhost-user-cache) "
+      },
+      "logout": {
+        "name": "logout()",
+        "type": "function",
+        "returns": "boolean",
+        "args": {
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n  sh.logout()\n----------------------------------------------\n\n功能：\n\n   退出shell，释放占用的shell执行环境资源。\n\n   此函数不会出错。\n\n   二者区别在于：\n\n   logout，若login设置了复用标识，则并不会真正关闭shell，而是缓存留待后续log\nin时复用；若login没有设置复用标识，则其效果等同于close，即关闭shell。\n\n参数：\n\n   无\n\n返回值：\n\n   总是返回boolean类型true。\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/sh/#42-shlogoutclose) "
+      },
+      "close": {
+        "name": "close()",
+        "type": "function",
+        "returns": "boolean",
+        "args": {
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n  sh.close()\n----------------------------------------------\n\n功能：\n\n   退出shell，释放占用的shell执行环境资源。\n\n   此函数不会出错。\n\n   二者区别在于：\n\n   logout，若login设置了复用标识，则并不会真正关闭shell，而是缓存留待后续log\nin时复用；若login没有设置复用标识，则其效果等同于close，即关闭shell。\n\n参数：\n\n   无\n\n返回值：\n\n   总是返回boolean类型true。\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/sh/#42-shlogoutclose) "
+      },
+      "uname": {
+        "name": "uname()",
+        "type": "function",
+        "returns": "boolean",
+        "args": {
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n  sh.uname()\n----------------------------------------------\n\n功能：\n\n   获取系统信息。\n\n参数：\n\n   无\n\n返回值：\n\n   总是返回table类型，包含元素如下表\n\n|参数名称 |约束     |类型     |描述                               |\n|---------|----------|---------|----------------------------------|\n|os       |必选     |string   |操作系统类型，如Linux、AIX、HP-UX等，同“uname”命令结果|\n|ver      |必选     |string   |系统版本，同“uname -rv”命令结果    |\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/sh/#43-shuname)"
+      },
+      "exe": {
+        "name": "exe(cmd, exp_table[, opt_table])",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "cmd": {
+            "name": "cmd",
+            "type": "string",
+            "doc": "",
+            "option": "False"
+          },
+          "exp_table": {
+            "name": "exp_table",
+            "type": "table",
+            "doc": " ",
+            "option": "True"
+          },
+          "opt_table": {
+            "name": "opt_table",
+            "type": "table",
+            "doc": "",
+            "option": "True"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n  sh.exe(cmd, exp_table[, opt_table])\n----------------------------------------------\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准 |备注            |\n|---------|----------|---------|----------------------------------|\n|支持          |拦截，出错不返回 |r.Retn非”0000”    |设返回值为r     |\n\n\n功能：\n\n   往shell环境输入执行。\n\n参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------|\n|cmd       |          |必选      |string    |输入命令串，对于较复杂的命令串，建议先调用支持C printf风格格式串的Lua标准库函数string.format()拼装命令串。支持以下转义控制字符：<br/>\r: 回车 <br/>\n: 换行 <br/>^C: Ctrl+C <br/>^D: Ctrl+D          |\n|exp_table |          |可选      |table     |【1】shell输出结果的期望匹配列表，匹配规则使用正则表达式。支持两种风格的规则表，比如字符串索引{succ=\"> \",err=\".oginincorrect\"}数字索引{\"> \",\".ogin incorrect\"}注意：若shell命令输出结果同时可匹配多条正则表达式，1）对于字符串索引规则，优先匹配规则表中处于靠前位置的，比如上例中匹配结果为succ；2）对于数字索引规则，按照数字序号，匹配规则是排在前面，即序号小的。2】可以使用空串（即双引号””）匹配无输出。参考例子了解更多使用说明                |\n|opt_table |          |可选      |table     |命令执行过程的控制选项                  |\n|newcmd    |opt_table |可选      |boolean   |newcmd=bool是否要求在系统提示符PS1下开始执行一个新命令。缺省直接在当前提示符下执行命令，不做检查和要求，因此可能是PS1，也可能是应用程序提示符（比如“ftp> ”等）。         |\n|endcmd    |opt_table |可选      |boolean   |endcmd=bool是否等待命令执行完、出现系统提示符PS1之后再检查输出结果匹配情况。缺省等待。    |\n|wait      |opt_table |可选      |number    |wait=n等待命令输入n秒后再检测匹配输出结果。缺省不等待，即输入命令后立即开始检测是否有匹配的输出结果。    |\n|timeout   |opt_table |可选      |number    |timeout=sec命令执行sec秒后仍未从输出结果中检测到匹配结果时做超时处理，内置缺省30s，可通过SLR配置改变缺省值|\n|echo      |opt_table |可选      |boolean   |echo=bool输入是否回显，缺省回显                  |\n\n\n返回值：\n\n   table类型，包含元素如下表\n\n|参数名称 |约束     |类型     |描述                               |\n|---------|----------|---------|----------------------------------|\n|Retn     |必选     |string   |命令执行结果码：<br/>0000 成功 <br/>1001 未执行login() <br/>1002 命令串错误 <br/>1003往shell环境输入命令失败<br/>1004 超时无匹配结果                |\n|Desc     |必选     |string   |命令执行结果描述                   |\n|match    |必选     |string或number|匹配列表exp_table索引值，可以是显式给出的字符串索引，也可以是隐式的数字序号索引 |\n|result   |必选     |string   |正则表达式匹配上的完整结果         |\n|substr   |可选     |table    |正则表达式匹配子串，使用数字下标访问不同子串，如：r.substr[1], r.substr[2]无匹配子串时，无此substr元素|\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/sh/#44-shexecmd-exp_table-opt_tabley) "
+      }
+    },
+    "doc": "sh 模块，提供 SHELL 操作。要使用此部分API，需在Lua业务逻辑中包含如下代码行：\n\ninclude \"sh\" \n\n [API 参考手册](http://47.93.41.209:9876/sh/)"
+  },
+  "sdc": {
+    "name": "sdc",
+    "type": "sdc",
+    "properties": {
+      "sqlSelect": {
+        "name": "sqlSelect([sid,] format[, ...])",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "sid": {
+            "name": "sid",
+            "type": "string | number",
+            "doc": "可以设置要查询的数据库对应的业务ID，缺省值为Lua业务逻辑脚本全局变量SERVICE_ID。sid必须小于等于8个字符",
+            "option": "True"
+          },
+          "format": {
+            "name": "format",
+            "type": "string | table",
+            "doc": "string：按照C printf()风格直接提供SQL语句table：sdc.SelectParam()的返回值；详见SDC参数表",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n  sdc.sqlSelect([sid,] format[, ...])\n-------------------------------------------\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准|备注            |\n|---------|----------|---------|----------------------------------|\n|支持      |拦截，出错不返回 |r.Retn非\"0000\"    |设返回值为r     |\n\n\n功能：\n\n   执行数据库查询操作，只需给出查询SQL参数即可。\n\n   对于查询的目标数据库，若sid存在，则由sid指定，若不存在使用业务逻辑中的SERVICE_ID指定。\n\n入口参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|sid|无|可选|string或number|可以设置要查询的数据库对应的业务ID，缺省值为Lua业务逻辑脚本全局变量SERVICE_ID。sid必须小于等于8个字符|\n|format|无|必选|string或table|string：按照C printf()风格直接提供SQL语句table：sdc.SelectParam()的返回值；详见SDC参数表|\n\n\n参数错误：\n\n   类型错误：记录日志，直接返回\n\n   冗余参数：与格式串要求的参数个数不匹配，直接返回\n\n返回值：\n\n   table类型，包含元素如下表\n\n|参数名称 |约束     |类型     |描述                               |\n|---------|----------|---------|--------------------------------|\n|Retn     |必选     |string   |命令处理结果应答码（仅应答消息有）<br/>，数字字符串<br/>0000：操作成功；<br/>0001-0999：系统内部错误 <br/>1000-9999：各命令自定义错误。      |\n|Desc     |必选     |string   |命令处理结果描述                   |\n|RowNum   |可选     |number   |本次查到的记录数量，当Retn为0000（操作成功）时才有此项               |\n|FieldNum |可选     |number   |每行记录的字段数量，当Retn为0000（操作成功）时才有此项               |\n|EndFlag  |可选     |number   |是否所有符合要求的记录全部查询完毕。分页查询使用。<br/>0：还有符合条件的记录；<br/>1：所有记录返回完毕。<br/>当Retn为0000（操作成功）时才有此项 |\n|FieldName|可选     |table    |查询到字段名称。<br/>{\"fname.1\",\"fname.2\",\"fname.n\"} <br/>当Retn为0000（操作成功）时才有此项 |\n|[]       |可选     |table    |查询结果（行列矩阵），访问方法见示例                                 |\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/sdc/#31-sdcsqlselectsid-format)"
+      },
+      "sqlRun": {
+        "name": "sqlRun([sid, ]format[, ...])",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "sid": {
+            "name": "sid",
+            "type": "string | number",
+            "doc": "可以设置要查询的数据库对应的业务ID，缺省值值为Lua业务逻辑脚本全局变量SERVICE_ID。sid必须小于等于8个字符",
+            "option": "True"
+          },
+          "format": {
+            "name": "format",
+            "type": "string | table",
+            "doc": "string：按照C printf()风格直接提供SQL语句table：sdc.RunParam()返回值，参数表支持的设置项详见SDC参数表",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n  sdc.sqlRun([sid, ]format[, ...])\n--------------------------------------\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准 |备注            |\n|---------|----------|---------|---------------------------------|\n|支持          |拦截，出错不返回 |r.Retn非\"0000\"    |设返回值为r     |\n\n\n功能：\n\n   执行数据库更新操作，只需给出更新SQL参数即可。\n\n   对于更新的目标数据库，若sid存在，则由sid指定，若不存在使用业务逻辑中的SERVICE_ID指定。\n\n入口参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|sid|无|可选|number或sting|可以设置要查询的数据库对应的业务ID，缺省值值为Lua业务逻辑脚本全局变量SERVICE_ID。sid必须小于等于8个字符|\n|format|无|必选|string或table|string：按照C printf()风格直接提供SQL语句table：sdc.RunParam()返回值，参数表支持的设置项详见SDC参数表|\n\n\n参数错误：\n\n   类型错误：记录日志，直接返回\n\n   冗余参数：与格式串要求的参数个数不匹配，直接返回\n\n返回值：\n\n   table类型，包括元素如下\n\n|元素名称|父参数(table)|约束    |类型     |描述                        |\n|---------|----------|---------|---------|-------------------------|\n|Retn    |无      |必选    |string   |命令处理结果应答码（仅应答消息有），数字字符串<br/>0000：操作成功；<br/>0001-0999：系统内部错误<br/>1000-9999：各命令自定义错误。 |\n|Desc    |无      |必选    |string   |命令处理结果描述            |\n|Result  |无      |必选    |number   |整体操作结果 >=0: 全成功时，某实时库的影 响记录数 < 0：有失败时，某库的错误码  |\n|RunAck  |无      |可选    |table    |各库的详细操作结果列表      |\n|DBCode  |RunAck  |必选    |number   |数据库编号                  |\n|Result  |RunAck  |必选    |number   |数据库执行结果。<br/> >=0:操作影响记录数；<br/>-1: 发送连接池失败 <br/>-2：连接池执行<br/>< 0：操作失败的错误码；|\n|Info    |RunAck  |必选    |string   |数据库操作结果描述信息。格式：\"-错误码:错误信息\"|\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/sdc/#32-sdcsqlrunsid-format) "
+      },
+      "splRun": {
+        "name": "splRun([sid, ]format[, ...])",
+        "type": "function",
+        "returns": "table",
+        "args": {
+          "sid": {
+            "name": "sid",
+            "type": "string | number",
+            "doc": "可以设置要查询的数据库对应的业务ID，缺省值值为Lua业务逻辑脚本全局变量SERVICE_ID。sid必须小于等于8个字符",
+            "option": "True"
+          },
+          "format": {
+            "name": "format",
+            "type": "string | table",
+            "doc": "string：按照C printf()风格直接提供SQL语句table：sdc.RunParam()返回值，参数表支持的设置项详见SDC参数表",
+            "option": "False"
+          }
+        },
+        "notice": "",
+        "exception": "",
+        "doc": "函数说明：\n\n  sdc.splRun([sid, ]format[, ...])\n----------------------------------------------\n\n\n|是否支持错误拦截|缺省拦截模式   |API执行错误判定标准 |备注            |\n|---------|----------|---------|---------|-------------------------|\n|支持     |拦截，出错不返回 |r.Retn非\"0000\"    |设返回值为r     |\n\n\n功能：\n\n   执行存储过程操作，只需给出命令串即可。\n\n   对于目标数据库，若sid存在，则由sid指定，若不存在使用业务逻辑中的SERVICE_ID指定。\n\n入口参数：\n\n|参数名称  |父参数(table)|约束      |类型      |描述                |\n|---------|----------|---------|---------|-------------------------\n|sid       |无       |可选      |number或string|可以设置目标数据库对应的业务ID，缺省值值为Lua业务逻辑脚本全 局变量SERVICE_ID。sid必须小于等于8个字符|\n|format    |无        |必选      |string或table|按照Cprintf()风格直接提供命令串；table必须是sdc.SplParam()返回的；详见SDC参数表|\n\n\n参数错误：\n\n   类型错误：记录日志，直接返回\n\n   冗余参数：与格式串要求的参数个数不匹配，直接返回\n\n返回值：\n\n   成功（一个返回值）：\n\n   table类型，包括元素如下\n\n|元素名称|父参数(table)|约束    |类型     |描述                        |\n|---------|----------|---------|---------|-------------------------|\n|Retn    |无      |必选    |string   |命令处理结果应答码（仅应答消息有），数字字符串 <br/> 0000：操作成功；<br/> 0001-0999：系统内部错误<br/>1000-9999：各命令自定义错误。                          |\n|Desc    |无      |必选    |string   |命令处理结果描述            |\n|Result  |无      |必选    |number   |整体操作结果=0: 存储过程执行成功；< 0：有失败时，某库的错误码  |\n|RunAck  |无      |可选    |table    |各库的详细操作结果列表      |\n|DBCode  |RunAck  |必选    |number   |数据库编号                  |\n|Result  |RunAck  |必选    |number   |数据库执行结果。 =0: 存储过程执行成功； < 0: 失败错误码；            |\n|Info    |RunAck  |必选    |string   |存储过程执行成功，为存储过程返回值，如返回值有多个参数，以__竖线__分隔，如无返回值，则为 空；如果存储过程执行失败，为执行失败的错误信息。|\n\n\n   失败（一个返回值）：\n\n   table类型，包括元素如下\n\n|元素名称|父参数(table|约束    |类型     |描述                        |\n|---------|----------|---------|---------|-------------------------|\n|Retn    |无      |必选    |string   |命令处理结果应答码（仅应答消息有），数字字符串0001-0999：系统内部错误1000-9999：各命令自定义错误。                         |\n|Desc    |无      |必选    |string   |命令处理结果描述            |\n\n 参考示例：[参考示例代码](http://47.93.41.209:9876/sdc/#33-sdcsplrunsid-format) "
+      }
+    },
+    "doc": "sdc 模块，提供 SDC 模式数据库操作服务。要使用此部分API，需在Lua业务逻辑中包含如下代码行：\n\ninclude \"sdc\" \n\n [API 参考手册](http://47.93.41.209:9876/sdc/)"
+  }
+
+
+}
+

@@ -1,0 +1,12 @@
+{
+  "ismp": {
+    "type": "define",
+    "properties": {
+      "version": {
+        "type": "define",
+        "name": "defines.ismp.version"
+      }
+    }
+  }
+
+}
